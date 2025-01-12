@@ -103,7 +103,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 180px; /* Match cat image width */
+    width: 180px;
 }
 
 .hp-text {
@@ -128,7 +128,7 @@ body {
     margin: 0 auto 40px;
     padding: 0 20px;
     box-sizing: border-box;
-    position: relative; /* Added for absolute positioning reference */
+    position: relative;
 }
 
 .cat {
@@ -140,8 +140,8 @@ body {
     border: 5px solid white;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     flex-shrink: 0;
-    position: relative; /* Added for z-index */
-    z-index: 2; /* Ensure cats stay above VS */
+    position: relative;
+    z-index: 2;
 }
 
 .cat.moci {
@@ -162,7 +162,7 @@ body {
     padding: 0 40px;
     flex-shrink: 0;
     position: relative;
-    z-index: 1; /* Place VS behind cats */
+    z-index: 1;
 }
 
 .moci.attack {
@@ -197,7 +197,7 @@ body {
         z-index: 2;
     }
     50% { 
-        transform: translateX(400px); /* Increased distance to reach Oyen */
+        transform: translateX(400px);
         z-index: 2;
     }
     100% { 
@@ -241,4 +241,138 @@ body {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    /* Header adjustments */
+    .header {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    /* Photo container adjustments */
+    .photo-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .emoji-love {
+        font-size: 2.5em;
+    }
+
+    .footer {
+        font-size: 1.5em;
+    }
+
+    /* Battle phase adjustments */
+    .battle-container {
+        padding: 10px;
+    }
+
+    .health-bars {
+        padding: 0 10px;
+    }
+
+    .health-bar {
+        width: 120px;
+    }
+
+    .hp-text {
+        font-size: 1.2em;
+    }
+
+    .hearts {
+        font-size: 1.5em;
+    }
+
+    .battle-stage {
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+
+    .cat {
+        width: 120px;
+        height: 120px;
+    }
+
+    .vs {
+        font-size: 2em;
+        padding: 0 20px;
+    }
+
+    @keyframes attack {
+        0% { 
+            transform: translateX(0);
+            z-index: 2;
+        }
+        50% { 
+            transform: translateX(200px);
+            z-index: 2;
+        }
+        100% { 
+            transform: translateX(0);
+            z-index: 2;
+        }
+    }
+
+    #attack-btn {
+        padding: 12px 24px;
+        font-size: 1.2em;
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+    .header {
+        font-size: 1.8em;
+    }
+
+    .photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cat {
+        width: 100px;
+        height: 100px;
+    }
+
+    .vs {
+        font-size: 1.5em;
+        padding: 0 15px;
+    }
+
+    .hp-text {
+        font-size: 1em;
+    }
+
+    .hearts {
+        font-size: 1.2em;
+    }
+
+    @keyframes attack {
+        50% { 
+            transform: translateX(150px);
+        }
+    }
+
+    /* Additional mobile optimizations */
+    .battle-container {
+        padding: 5px;
+    }
+
+    .health-bars {
+        margin-bottom: 20px;
+    }
+
+    #attack-btn {
+        padding: 10px 20px;
+        font-size: 1.1em;
+    }
 }
